@@ -1,8 +1,15 @@
 {
   "cli": {
+    "appVersionSource": "local",
     "version": ">= 3.5.2"
   },
   "build": {
+    "staging": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      }
+    },
     "development": {
       "distribution": "internal",
       "android": {
