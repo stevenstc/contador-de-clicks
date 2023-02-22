@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   titulo: {
-    fontSize: '30px',
-    fontWeight: '600'
+    fontSize: 30,
+    fontWeight: 'bold'
   }
 });
