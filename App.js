@@ -13,7 +13,6 @@ const [count, setCount] = useState(0);
       <br></br>
       <br></br>
       <br></br>
-
       <Button
         onPress={() => setCount(count + 1)}
         title="Presionar"
