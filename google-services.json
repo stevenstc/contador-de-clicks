@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "59725862785",
+    "project_id": "contador-de-clicks-487dd",
+    "storage_bucket": "contador-de-clicks-487dd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59725862785:android:b8da9cea6f15d46eedba80",
+        "android_client_info": {
+          "package_name": "com.stevenstc.contadordeclicks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "59725862785-9ne95nkjvabf3ge2sm1pjb8pcp18oo5o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD69dE2LGKaS300yHUYKdUdV9OZswcdjBA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "59725862785-9ne95nkjvabf3ge2sm1pjb8pcp18oo5o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

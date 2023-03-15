@@ -1,24 +1,57 @@
 {
   "name": "contador-de-clicks",
-  "version": "1.2.0",
+  "displayName": "Contador de Clicks",
+  "version": "1.2.3",
+  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "homepage": "./",
+  "main": "src/index.js",
   "scripts": {
-    "start": "expo start --dev-client",
-    "android": "expo run:android",
-    "ios": "expo run:ios",
-    "web": "expo start --web"
+    "start": "react-scripts start",
+    "build": "react-scripts build && npx rimraf www && npx move-cli build www",
+    "test": "react-scripts build && npx rimraf www && npx move-cli build www && cordova build android -release",
+    "eject": "react-scripts eject"
   },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "stc Team",
+  "license": "Apache-2.0",
   "dependencies": {
-    "@expo/webpack-config": "^18.0.1",
-    "expo": "^47.0.13",
-    "expo-splash-screen": "~0.17.5",
-    "expo-status-bar": "~1.4.2",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-native": "0.70.5",
-    "react-native-web": "~0.18.9"
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "cordova-android": "^11.0.0",
+    "cordova-browser": "^6.0.0",
+    "rimraf": "^4.1.2"
   },
-  "private": true
+  "cordova": {
+    "platforms": [
+      "browser",
+      "android"
+    ]
+  }
 }
