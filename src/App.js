@@ -7,7 +7,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      cuentas: 0,
+      cuenta: 0,
       seg: 0,
       cps: 0
     };
@@ -20,52 +20,53 @@ class App extends Component {
 
   }
 
-  componentDidMount(){
-    setInterval(()=>{
+  componentDidMount() {
+    setInterval(() => {
       this.saveCPS();
-      
+
     }, 1000);
   }
 
-  saveCPS(){
-      var cps = 0;
+  saveCPS() {
+    var cps = 0;
 
-      var seg = this.state.seg;
+    var seg = this.state.seg;
 
-      if(this.state.cuentas > 0){
-        cps = this.state.cuentas/this.state.seg
-        seg++;
-      }else{
-        cps = 0;
-        seg = 0;
-      }
+    if (this.state.cuenta > 0) {
+      cps = this.state.cuenta / this.state.seg
+      seg++;
+    } else {
+      cps = 0;
+      seg = 0;
+    }
 
-      this.setState({
-        cps: parseFloat(cps.toFixed(2)),
-        seg: seg
-      })
+    this.setState({
+      cps: parseFloat(cps.toFixed(2)),
+      seg: seg
+    })
   }
 
   setCount() {
-    var cuenta = this.state.cuentas+1;
+    let cuenta = this.state.cuenta + 1;
+
     this.setState({
-      cuentas: cuenta
+      cuenta
     })
 
-    localStorage.setItem('cuentas',cuenta+'')
+    localStorage.setItem('cuenta', cuenta + '')
 
   }
 
   reSet() {
     this.setState({
-      cuentas: 0
+      cuenta: 0
     })
   }
 
   reCover() {
-    var cuenta = parseInt(localStorage.getItem('cuentas'));
+    let cuenta = parseInt(localStorage.getItem('cuenta'));
     this.setState({
-      cuentas: cuenta
+      cuenta
     })
   }
 
@@ -73,9 +74,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 onClick={() => this.setCount()}>Clicks: {this.state.cuentas}</h1>
+          <h1 onClick={() => this.setCount()}>Clicks: {this.state.cuenta}</h1>
           <h2>CPS: {this.state.cps}</h2>
-          <div onClick={() => this.setCount()} style={{ backgroundColor: "green", height: "200px", width: "500px",color:"gray",cursor:"pointer",userSelect: "none" }}>Click here</div>
+          <div onClick={() => this.setCount()} style={{ backgroundColor: "green", height: "200px", width: "500px", color: "white", cursor: "pointer", userSelect: "none", borderRadius: "5px", padding: "80px" }}>Click here</div>
           <p>
             <button className='btn btn-success mt-3' onClick={() => this.setCount()}>Click</button>
             <br></br>

@@ -1,7 +1,7 @@
 {
   "name": "contador-de-clicks",
   "displayName": "Contador de Clicks",
-  "version": "1.3.1",
+  "version": "1.3.4",
   "description": "A sample Apache Cordova application that responds to the deviceready event.",
   "homepage": "./",
   "main": "src/index.js",
