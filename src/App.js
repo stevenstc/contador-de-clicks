@@ -1,5 +1,50 @@
-import { Component } from 'react';
+import React, { useState, useEffect, Component } from 'react';
 import './App.css';
+
+
+const ClickCounter = () => {
+  const [clicks, setClicks] = useState(0);
+  const [maxCPS, setMaxCPS] = useState(0);
+  const [cps, setCps] = useState(0);
+  const [startTime, setStartTime] = useState(null);
+
+  // Función para manejar el clic
+  const handleClick = () => {
+    setClicks((prevClicks) => prevClicks + 1);
+  };
+
+  useEffect(() => {
+    if (startTime === null) {
+      setStartTime(Date.now());
+    }
+
+    const interval = setInterval(() => {
+      const elapsed = (Date.now() - startTime) / 1000; // Tiempo en segundos
+      setCps(clicks / elapsed); // CPS actual
+
+      // Actualizar el máximo CPS si es necesario
+      if (cps > maxCPS) {
+        setMaxCPS(cps);
+      }
+
+    }, 100);
+
+    // Limpiar intervalos cuando el componente se desmonte
+    return () => clearInterval(interval);
+  }, [clicks, startTime, cps, maxCPS]);
+
+  return (
+    <div>
+      <button onClick={handleClick}>Click me!</button>
+      <p>Clicks: {clicks}</p>
+      <p>CPS: {cps.toFixed(2)}</p>
+      <p>Max CPS: {maxCPS.toFixed(2)}</p>
+      <p>CPM: {(cps * 60).toFixed(2)}</p>
+      <p>Max CPM: {(maxCPS * 60).toFixed(2)}</p>
+
+    </div>
+  );
+};
 
 class App extends Component {
 
@@ -92,4 +137,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default ClickCounter;
